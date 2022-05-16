@@ -12,7 +12,7 @@ def play():
         return True
 
     print(
-        f'Well...that was bad, the number was {comp_number}. Maybe if you try again!')
+        f'Well...that was bad, the number was {comp_number}. Maybe if you try again!')  # noqa: E501
     return False
 
 
