@@ -35,9 +35,21 @@ def word_shot(word):
     player = input(
         'Time for the real deal. Tell me, what is the hidden word -->')
     # TODO Add a string verification system
+    if not verify_answer(player):
+        return word_shot(word)
     if player.lower() != word.lower():
         return False
     return True
+
+
+def verify_answer(answer):
+    try:
+        if answer.isnumeric():
+            raise ValueError
+    except ValueError as error:
+        print(f'Erro {error}')
+        return False
+    return answer.strip()
 
 
 def get_player_guess():
