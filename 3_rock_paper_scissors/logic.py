@@ -1,14 +1,14 @@
 paper = {
-    'rock': 'Win',
-    'scissors': 'Loss'
+    'rock': True,
+    'scissors': False
 }
 
 rock = {
-    'scissors': 'Win',
-    'paper': 'Loss',
+    'scissors': True,
+    'paper': False,
 }
 
 scissors = {
-    'paper': 'Win',
-    'rock': 'Loss'
+    'paper': True,
+    'rock': False
 }
