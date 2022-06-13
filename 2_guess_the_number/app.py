@@ -6,6 +6,8 @@ class Game:
         print("welcome to guess the number!")
 
         self.difficulty = self.pick_difficulty()
+        self.wins = 0
+        self.loses = 0
 
     def play(self) -> bool:
         comp_number = self.get_comp_number(self.difficulty)
@@ -62,14 +64,20 @@ class Game:
 
     def check_choices(self, comp_choice, player_choice):
         if comp_choice != player_choice:
+            self.loses += 1
             return False
+        self.wins += 1
         return True
 
 
 if __name__ == "__main__":
     game = Game()
-    while True:
+    for i in range(5):
         print("----------------------------------------------------")
+        print(f'Round {i+1}')
         print()
         game.play()
         print()
+
+    print('Final result...')
+    print(f'Wins: {game.wins} / loses: {game.loses}')
